@@ -8,6 +8,10 @@ header {
     align-items: center;
     background: #f6c470;
     padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
   }
   
 .container1 {
@@ -34,6 +38,7 @@ header {
     margin: auto;
     display: flex;
     justify-content: space-around;
+    white-space: nowrap;
   }
   
   .container2 li {
@@ -101,54 +106,48 @@ header {
   }
   
 
-.production-collage {
+#production, #completed-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
+}
+
+#production h2, #completed-projects h2 {
+  margin-bottom: 30px;
+}
+
+.production-collage, .video-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.photo-container {
-  width: 300px;
+.photo-container, .video-container {
+  width: 380px;
   height: 200px;
-  margin: 10px;
+  padding: 10px;
   overflow: hidden;
+  border-radius: 10px;
 }
 
-.photo-container img {
+
+.photo-container img, .video-container video, .video-container iframe {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px;
   transition: transform .2s;
 }
 
-.photo-container:hover img {
+.photo-container:hover img, .video-container:hover video, .video-container:hover iframe {
   transform: scale(1.1);
 }
 
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-gap: 10px;
-}
-
-.video-container {
-  position: relative;
-  overflow: hidden;
-  padding-top: 56.25%;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 
 h2 {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;   
     max-width: 800px;
     margin: 0 auto;
@@ -163,27 +162,32 @@ h2 {
     header {
     display: block;
     width:100%;
-    text-align:center;
   }
     .container2 {
-        text-align: center;
+        text-align: left;
     }
     .container2 ul {
         display: inline-block;
     }
     .container1 {
-        text-align: center;
+        text-align: left;
   }
     .container3 {
         text-align: center;
   }
-
+  .logo-left {
+    text-align: left;
+  }
+  .logo-right {
+    text-align: right;
+  }
 }
-@media all and (min-width:551px) and (max-width:1199px){
+@media all and (min-width:551px) and (max-width:999px){
     header {
         display: block;
         width:100%;
         text-align:center;
+        gap: auto, 10px;
   }
     .container3 {
         text-align: center;
